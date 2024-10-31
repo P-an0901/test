@@ -1,0 +1,154 @@
+
+    
+:root {
+    --white: #fff;
+    --black: #000;
+    --text-color: #333;
+    --red: #B5292F;
+    --shadow-color: rgb(0 0 0 / 10%);
+}
+html, body {
+    background-color: #f8f9fa;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+/* class*/
+.container {
+    max-width: 1200px;
+    padding: auto;
+    margin: auto;
+}
+header {
+    position: sticky;
+    top:0;
+    z-index: 6;    
+}
+.header-top {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+}
+.header-middle{
+    padding: 5px;
+    position: sticky;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.header-middle .container {
+    height: 50px;
+    padding: 5px;
+}
+        
+.header-bottom{ 
+    transition: transform 0.6s ease;
+    position: sticky;
+    border-top: 1px solid #eee;
+    background-color: var(--white);
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 10%);
+    z-index: 4;
+    height: 53px;
+}
+
+.header-bottom.hide{
+    transform: translateY(-53px);
+}
+        
+/* .header-logo-img {
+    width: 150px;
+} */
+.btn{
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    box-shadow: none;
+}
+.btn:hover{
+    background-color: #c71a22;
+    color: var(--white);
+}
+.btn:focus{
+    box-shadow: none;   
+
+}
+
+.pointer{
+    cursor: pointer;
+}
+.modal-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.form-check-label a, .change-login a{
+    color: var(--red);
+    margin-left: 5px;
+}
+.form-message {
+    color: red;
+    font-size: 12px;
+}
+
+input[type="checkbox"] {
+    accent-color: #B5292F; 
+}
+input[type="checkbox"]+label {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+}
+.modal-header{
+    height: 20px;
+    border: none;
+}
+.modal-header .close{
+    padding: 5px;
+}
+button.close {
+    outline: none;
+    border: none;
+}
+ 
+.menu-list {
+    display: flex;
+    height: 49px;
+    white-space: nowrap;
+    padding: 0;
+    list-style-type: none;
+}
+.menu-link {
+    color: var(--black);
+    display: inline-block;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 15px;
+}
+
+.menu-link:hover::after {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    visibility: hidden;
+    transform: scale(0);
+    opacity: 0;
+    transition: visibility 0.3s, transform 0.3s, opacity 0.3s;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--red);
+    transition: all 0.3s ease;
+}
