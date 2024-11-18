@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <ul class="list-inline mb-0" id="sesion-left">
+                        <li class="list-inline-item"><a href="#" class="text-white"><i class="fas fa-phone mr-2"></i>0123 456 789 (miễn phí)</a></li>
+                    </ul>
+                    <ul class="list-inline mb-0" id="session_right">
+                        <li class="list-inline-item"><a href="../html/gioithieu.html" class="text-white">Giới thiệu</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Cửa hàng</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Chính sách</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-middle">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between" id="headerMid">
+                    <div class="header-logo">
+                        <a href="">
+                            <img src="../images/HELMET.png" alt="" class="header-logo-img">
+                        </a>
+                    </div>
+                    <div action="" class="form-inline">
+                        <form class=" d-flex flex-grow-1">
+                            <input type="text" class="form-control mr-2 pr-5 " placeholder="Tìm kiếm sản phẩm..." oninput="">
+                            <button class="btn mr-3" type="button"><i class="fas fa-search"></i> Tìm</button>
+                        </form>
+                        <ul class="list-inline mb-0 d-flex">
+                            <li class="list-inline-item pointer" id="login-menu" onclick="openModal('login')">
+                                <i class="fas fa-user"></i>
+                                <span>Đăng nhập</span>
+                            </li>
+                            <li class="list-inline-item pointer" id="signup-menu" onclick="openModal('signup')">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Đăng ký</span>
+                            </li>
+                            <li class="list-inline-item pointer" id="account-menu" style="display: none; position: relative;">
+                                <i class="fas fa-user-circle"></i>
+                                <span id="account-name">Tài khoản</span>
+                                
+                                <!-- Dropdown menu -->
+                                <ul class="dropdown-menu  pl-2" style="display: none;">
+                                    <li><a href="../html/taikhoan.html" id="logout">Thông tin tài khoản</a></li>
+                                    <li><a href="../html/admin.html" id="admin-page" style="display: none;">Trang Admin</a></li>
+                                    <li><a href="#" id="logout-button">Đăng xuất</a></li>
+                                    <li><a href="#" id="change-password">Đổi mật khẩu</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-inline-item pointer cart-container" onclick="openCart()" title="Giỏ hàng">
+                                <a href="../html/giohang.html">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="badge badge-pill badge-danger">0</span>
+                                </a>
+                                <div class="cart-dropdown">
+                                    <ul id="cart-items">
+                                        <!-- Nội dung sản phẩm sẽ hiển thị ở đây -->
+                                    </ul>
+                                    <div id="empty-message" class="empty-message">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        Không có sản phẩm nào.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <nav class="header-bottom">
+        <div class="container">
+            <ul class="menu-list">
+                <li class="menu-list-item"><a href="../index.html" class="menu-link">Trang chủ</a></li>
+                <li class="menu-list-item">
+                    <a href="../html/danhmuc.html" class="menu-link has-submenu">
+                        Danh Mục Sản phẩm 
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i> <!-- Icon mũi tên -->
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="../html/danhmuc.html?category=all"><strong>Tất cả sản phẩm</strong></a></li>
+                        <li><a href="../html/danhmuc.html?category=mu34">Mũ bảo hiểm 3/4 đầu</a></li>
+                        <li><a href="../html/danhmuc.html?category=fullface">Mũ bảo hiểm fullface</a></li>
+                        <li><a href="../html/danhmuc.html?category=half">Mũ bảo hiểm nửa đầu</a></li>
+                        <li><a href="../html/danhmuc.html?category=child">Mũ bảo hiểm trẻ em</a></li>
+                        <li><a href="../html/danhmuc.html?category=bicycle">Mũ bảo hiểm xe đạp</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list-item"><a href="#" class="menu-link">Khuyến mãi</a></li>
+                <li class="menu-list-item">
+                    <a href="#" class="menu-link has-submenu">
+                        Thương Hiệu 
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i> <!-- Icon mũi tên -->
+                    </a>
+                    <ul class="submenu" id="brand-submenu">
+                        <li>
+                            <a href="../html/Royal.html">
+                                <img src="../images/Logo2020-02.png" alt="Roc" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../html/Royal.html">
+                                <img src="../images/Logo2020-03.png" alt="Royal" class="submenu-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../html/JC.html">
+                                <img src="../images/Logo2020-05.png" alt="JC" class="submenu-icon"> 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="" alt="Asia" class="submenu-icon"><span>Asia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="" alt="Andes" class="submenu-icon"><span>Andes</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">
+                                <img src="" alt="NonSon" class="submenu-icon"><span>Nón sơn</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/header.js"></script>
+</header>
+</body>
+</html>

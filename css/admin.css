@@ -1,0 +1,429 @@
+:root {
+    --red: #B5292F;
+    --lightest-gray: rgb(249, 249, 249);
+}
+button{
+    border: none;
+}
+button:focus{
+    border: none;
+    outline: none;
+}
+button:hover{
+    color: #c71a22;
+}
+.container{
+    max-width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.sidebar {
+    width: 75px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 5rem;
+    align-items: center;
+    transition: width var(--animation-duration) var(--animation-timing-curve);
+    position: sticky;
+
+}
+
+.sidebar .hidden-sidebar {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: opacity var(--animation-duration) var(--animation-timing-curve);
+}
+
+.sidebar.open .hidden-sidebar {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+.sidebar .top-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar .channel-logo {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar.open .channel-logo {
+    width: 80%;
+    height: auto;
+}
+
+.sidebar .channel-logo>img {
+    width: 100%;
+    height: 100%;
+}
+
+.middle-sidebar {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-grow: 1;
+    margin: 1rem 0;
+}
+
+.middle-sidebar,
+.bottom-sidebar {
+    width: 100%;
+}
+
+.sidebar-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar.open .sidebar-link {
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.sidebar-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.sidebar-list .hidden-sidebar {
+    margin-left: 1.5rem;
+    white-space: nowrap;
+}
+
+.sidebar-link {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem 0;
+    color: var(--light-gray);
+    text-decoration: none;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.sidebar-link:hover {
+    color: var(--red);
+}
+
+.sidebar-list-item {
+    position: relative;
+    width: 100%;
+    color: var(--light-gray);
+}
+
+.sidebar-list-item.active {
+    color: var(--red);
+    background-color: var(--lightest-gray);
+}
+
+.sidebar-list-item:hover {
+    background-color: var(--lightest-gray);
+}
+
+.sidebar-list-item.active::before {
+    content: "";
+    background-color: var(--red);
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 5px;
+    position: absolute;
+}
+
+.sidebar.open {
+    width: 250px;
+}
+
+.your-channel {
+    color: var(--dark-gray);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.15rem;
+    margin-top: 0.5rem;
+}
+.sidebar .top-sidebar {
+    height: 30px;
+    transition: height var(--animation-duration) var(--animation-timing-curve);
+}
+
+.sidebar.open .top-sidebar {
+    height: 125px;
+}
+
+.sidebar .top-sidebar .hidden-sidebar {
+    text-align: center;
+    width: 100%;
+}
+/* Kiểu dáng chính của nội dung */
+.content {
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f6f8;
+}
+
+/* Kiểu tiêu đề trang */
+.page-title {
+    color: var(--lightest-gray);
+    background-color: var(--red);
+    text-align: center;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+}
+.section {
+    height: 100%;
+    padding: 2rem 2rem 0 1.5rem;
+    display: none;
+    background-color: #fff;
+    position: relative;
+}
+
+.section.active {
+    display: block;
+}
+/* Bố trí các thẻ card trong một lưới */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Kiểu dáng cho từng thẻ card */
+.card-single {
+    flex: 1;
+    min-width: 200px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.card-single:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Bố cục nội dung trong thẻ */
+.box {
+    text-align: center;
+}
+
+/* Đặt kiểu cho số liệu */
+.card-single h2 {
+    font-size: 32px;
+    color: #B5292F;
+    margin: 10px 0;
+}
+
+/* Đặt kiểu cho hình ảnh icon */
+.on-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Kiểu chữ cho tiêu đề nhỏ */
+.on-box h3 {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Kiểu chữ cho phần mô tả */
+.on-box p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* customer */
+.table {
+    width: 100%;
+    overflow: auto;
+    background: #fff;
+    border-radius: 7px;
+}
+
+.setting {
+    position: absolute;
+    top:-50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid var(--lighter-gray);
+}
+
+thead td {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: var(--lighter-gray);
+    padding: 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+tbody tr td {
+    padding: 10px 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.prd-img-tbl {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+/* Product */
+.product-all {
+    padding: 20px 80px;
+}
+
+.btn-control-large{
+    background-color: var(--red);
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 20px;
+    width: auto!important;
+}
+
+.admin-control-right i {
+    margin-right: 5px;
+}
+label a {
+    color: var(--red);
+}
+
+#btn-add-account{
+    background-color: var(--red);
+    height: 30px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 20px
+}
+
+
+/* Detail Order */
+.admin-control {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.admin-control-center {
+    flex: 1;
+}
+
+.admin-control-right {
+    display: flex;
+}
+
+.admin-control-right button {
+    width: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.admin-control-right button:hover {
+    background-color: var(--red);
+    color:#fff
+}
+
+.form-search {
+    display: flex;
+    justify-content: center;
+}
+
+.search-btn {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    height: 40px;
+    padding: 0 15px;
+    color: var(--text-color);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.form-search-input {
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    padding-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 75%;
+}
+
+.fillter-date {
+    display: flex;
+}
+
+.fillter-date>div:first-child {
+    margin-right: 20px;
+}
+
+.fillter-date>div>label {
+    margin-right: 10px;
+    font-size: 15px;
+}
+.order-statistical{
+    display: flex;
+    margin: 30px 0;
+    column-gap: 20px;
+}
+
+.order-statistical-item{
+    box-shadow: 0px 1px 5px 2px #f1f1f1;
+    width: 32.1%;   
+    display: flex;
+    padding: 20px 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-statistical-item-icon i{
+    font-size: 45px;
+    margin-right: 25px;
+    color: var(--red);
+}
+
+.order-statistical-item-content-desc{
+    margin-bottom: 6px;
+    font-size: 14px;
+    color:#888
+}

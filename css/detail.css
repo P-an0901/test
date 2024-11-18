@@ -1,0 +1,225 @@
+.product-detail {
+    margin: 5px auto;
+    padding: 5px 0;
+    background-color: #fff;
+}
+.product-detail .container .row{
+    border-bottom: 15px solid #f4f4f4;
+    padding-bottom: 10px;
+}
+/* Modal*/
+ #imageModal{
+    display: none;
+    position: fixed;
+    z-index: 1051;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+#imageModal .modal-content {
+    position: relative; 
+    width: 600px;
+    height: 650px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+}
+
+/* Hình ảnh trong modal */
+#imageModal img {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    margin: auto; 
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10; 
+}
+/*Tiêu đề*/
+.product-info h1{
+    margin: 0;
+}
+.product-details {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.product-details a {
+    color: #B5292F; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.product-details a:hover {
+    text-decoration: underline;
+}
+
+.product-details span {
+    color: #333; 
+    margin: 0 5px;
+}
+/*Thông số*/
+.session-left {
+    width: 100%;
+}
+/* Các ảnh nhỏ */
+.product-thumbnails {
+    display: flex;
+    margin: 10px 0;
+    justify-content: center;
+}
+.thumbnail{
+    width: 20%;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+
+}
+.thumbnails {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+.thumbnail-container {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.thumbnail-container .thumbnails{
+    margin-right: 0;
+}
+.thumbnail:hover {
+    border-color: #B5292F;
+}
+
+/**/
+.checkbox-size {
+    transform: scale(2); 
+    margin-right: 10px;
+}
+#size label {
+    margin-right: 30px;
+    font-size: 16px;
+}
+.quantity-selector {
+    display: flex;
+    margin-bottom: 10px;
+}
+.quantity-selector input::-webkit-outer-spin-button,
+.quantity-selector input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.quantity-selector button{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 20px;     
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.quantity-selector button:hover{
+    background-color: #bbb;
+}
+.quantity-selector input {
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.product-info .product-price {
+    font-size: 24px;
+    color: #B5292F;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-description {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.product-description p{
+    font-size: 16px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.full-description{
+    display: none;
+}
+.full-description.show {
+    display: block;
+    opacity: 1;
+}
+.short-description{
+    position: relative;
+}
+.overlay {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.full-description.show .overlay{
+    display: none; 
+}
+.related-products {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.related-product-item {
+    text-align: center;
+    max-width: 20%;
+    max-height: 10%;
+}
+
+.related-product-image {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+}
+
+.related-product-name {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.related-product-btn{
+    font-size: 14px;
+}
