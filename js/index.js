@@ -33,7 +33,7 @@ $(document).ready(function(){
         updateCart();
     })
      // Khi nội dung của modal được tải xong
-     $("#modal-container").load("html/modal.html", function() {
+     $("#modal-container").load("modal.html", function() {
         // Đảm bảo rằng các sự kiện đã được gán sau khi tải modal
         const closeButton = document.querySelector('.close');
         if (closeButton) {
