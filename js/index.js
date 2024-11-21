@@ -17,7 +17,7 @@ $(document).ready(function(){
         }
         const currentUrl = window.location.pathname;
         const danhMucLink = document.querySelector('.menu-link[href="../html/danhmuc.html"]');
-        const trangChuLink = document.querySelector('.menu-link[href="../index.html"]');
+        const trangChuLink = document.querySelector('.menu-link[href="../html/index.html"]');
         
         // Xóa 'active' khỏi tất cả các menu links
         document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active'));

@@ -113,7 +113,7 @@ document.getElementById('place-order-btn').addEventListener('click', function ()
         // Nếu tất cả thông tin hợp lệ, tiếp tục xử lý đặt hàng
 
         alert('Đơn hàng của bạn đã được đặt thành công!');
-        window.location.href = "../index.html"; // Chuyển hướng về trang chủ
+        window.location.href = "../html/index.html"; // Chuyển hướng về trang chủ
     });
 
 });

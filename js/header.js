@@ -46,7 +46,7 @@ function logout() {
 
     // Thông báo và chuyển hướng
     alert("Bạn đã đăng xuất thành công!");
-    window.location.href = "../index.html";
+    window.location.href = "../html/index.html";
 }
 const searchInput = document.getElementById("searchInput");
 const searchResults = document.getElementById("searchResults");
