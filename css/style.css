@@ -6,7 +6,7 @@
     --shadow-color: rgb(0 0 0 / 10%);
 }
 html, body {
-    background-color: #e6e6e6;
+    background-color: #e6e6e6 !important;
     font-family: Tahoma, sans-serif;
     margin: 0;
     padding: 0;
@@ -16,8 +16,8 @@ html, body {
     padding: 0;
 }
 a:hover{
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none !important;
+    color: inherit !important;
 }
 #header-container{
     position: sticky;
@@ -74,9 +74,9 @@ header {
 }
         
 .btn{
-    background-color: var(--red);
-    color: var(--white);
-    height: calc(1.5em + .75rem + 2px);
+    background-color: var(--red) !important;
+    color: var(--white) !important;
+    height: calc(1.5em + .75rem + 2px) !important;
 }
 .btn:hover, .buy-button:hover, .form-ground-btn:hover,  
 .form-submit:hover{
