@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/danhmuc.css">
     <title>Thông tin tài khoản</title>
 </head>
 <body>
@@ -13,20 +14,45 @@
 
 <div id="header-container"></div>
 <div id="modal-container"></div>
+<div class="breadcrumb-container">
+    <ul class="breadcrumb">
+      <li><a href="../index.html">Trang chủ </a></li>
+      <li><span>/</span></li>
+      <li><a href="#" class="active">Tài khoản</a></li>
+    </ul>
+</div>
 <div class="back-to-top active">
     <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
 </div>
-<div class="container my-5">
-    <h2 class="text-center">Thông tin tài khoản</h2>
+<div class="container">
+    <h2 class="tk-title">Thông tin tài khoản</h2>
 
-    <!-- Thông tin cá nhân -->
+    <!-- Thông tin và thao tác với tài khoản -->
     <div class="card mb-4">
         <div class="card-header bg-primary text-white">
-            <h4>Thông tin cá nhân</h4>
+            <h4>Thông tin tài khoản</h4>
         </div>
         <div class="card-body">
-            <p><strong>Họ và tên:</strong> <span id="account-fullname">Chưa có thông tin</span></p>
-            <p><strong>Email:</strong> <span id="account-email">Chưa có thông tin</span></p>
+            <!-- Thông tin cá nhân -->
+            <p><strong>Họ và tên:</strong> <span id="account-fullname"></span></p>
+            <p><strong>Email:</strong> <span id="account-email"></span></p>
+            <p><strong>Số điện thoại:</strong> <span id="account-phone"></span></p>
+            <p><strong>Địa chỉ:</strong> <span id="account-address"></span></p>
+            
+            <!-- Thao tác với tài khoản -->
+            <div class="d-flex justify-content-between flex-column flex-sm-row">
+                <div class="mb-3">
+                    <button class="btn mb-2" id="edit-info-btn">
+                        <i class="fas fa-edit"></i> Chỉnh sửa thông tin
+                    </button>
+                    <button class="btn mb-2" id="change-password-btn">
+                        <i class="fas fa-key"></i> Đổi mật khẩu
+                    </button>
+                </div>
+                <button class="btn mt-2 mt-sm-0" id="delete-account-btn">
+                    <i class="fas fa-trash-alt"></i> Xóa tài khoản
+                </button>
+            </div>
         </div>
     </div>
 
@@ -43,6 +69,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Footer -->
 <div id="footer"></div>

@@ -18,9 +18,11 @@
         <ul class="breadcrumb">
           <li><a href="../index.html">Trang chủ </a></li>
           <li><span>/</span></li>
+          <li><a href="../html/danhmuc.html">Danh mục </a></li>
+          <li><span>/</span></li>
           <li><a href="#" class="active"> Royal M139 BoomBang</a></li>
         </ul>
-      </div>
+    </div>
     <div class="back-to-top active">
         <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
@@ -252,6 +254,7 @@
                         <p class="product-price">Giá: 150.000 đ</p>
                         <button class="buy-button related-product-btn" onclick="addToCart(this)">Thêm vào giỏ hàng</button>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -278,21 +281,51 @@
     
         <!-- Danh sách bình luận -->
         <div class="comment-list mt-4">
-            <div class="comment-item">
-                <h5 class="comment-name">Nguyễn Văn A</h5>
-                <p class="comment-text">Nón bảo hiểm này rất đẹp và chất lượng, tôi rất thích!</p>
+            <div class="filter-sort">
+                <label for="sort">Sắp xếp theo:</label>
+                <select id="sort" class="form-control w-auto" onchange="sortComments()">
+                    <option value="default">Mặc định</option>
+                    <option value="name">Tên người bình luận</option>
+                    <option value="date">Ngày tạo</option>
+                </select>
             </div>
-            <div class="comment-item">
-                <h5 class="comment-name">Trần Thị B</h5>
-                <p class="comment-text">Sản phẩm rất an toàn, tôi đã sử dụng và cảm thấy rất hài lòng.</p>
+        
+            <!-- Danh sách bình luận -->
+            <div id="comment-list-container">
+                <!-- Bình luận sẽ hiển thị ở đây -->
+                <div class="comment-item">
+                    <h6 class="comment-name">Nguyễn Văn A</h6>  <span class="comment-date ml-2">20/11/2024</span> 
+                    <p class="comment-text">Nón bảo hiểm này rất đẹp và chất lượng, tôi rất thích!</p>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-sm mr-3">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <button class="btn btn-sm">
+                            <i class="fas fa-thumbs-down"></i>
+                        </button>
+                    </div>
+                </div>
+            
+                <div class="comment-item">
+                    <h6 class="comment-name">Trần Thị B</h6>  <span class="comment-date ml-2">20/11/2024</span> 
+                    <p class="comment-text">Sản phẩm rất an toàn, tôi đã sử dụng và cảm thấy rất hài lòng.</p>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-sm mr-3">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <button class="btn btn-sm">
+                            <i class="fas fa-thumbs-down"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <!-- Thêm bình luận khác ở đây -->
+        
+            <!-- Mục "Xem thêm" -->
+            <div class="text-center mt-3">
+                <button class="btn btn-link" onclick="loadMoreComments()">Xem thêm</button>
+            </div>
         </div>
-    </div>
-    
 </section>
-    
-    
     <div id="footer"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

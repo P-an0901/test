@@ -1,6 +1,6 @@
 /* Chèn header*/
 $(document).ready(function(){
-    $("#header-container").load("html/header.html", function(){
+    $("#header-container").load("../html/header.html", function(){
         checkStatus();
         const headerNav = document.querySelector(".header-bottom");
         if (headerNav) {
@@ -16,8 +16,8 @@ $(document).ready(function(){
             });
         }
         const currentUrl = window.location.pathname;
-        const danhMucLink = document.querySelector('.menu-link[href="html/danhmuc.html"]');
-        const trangChuLink = document.querySelector('.menu-link[href="index.html"]');
+        const danhMucLink = document.querySelector('.menu-link[href="../html/danhmuc.html"]');
+        const trangChuLink = document.querySelector('.menu-link[href="../index.html"]');
         
         // Xóa 'active' khỏi tất cả các menu links
         document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active'));
@@ -33,7 +33,7 @@ $(document).ready(function(){
         updateCart();
     })
      // Khi nội dung của modal được tải xong
-     $("#modal-container").load("html/modal.html", function() {
+     $("#modal-container").load("../html/modal.html", function() {
         // Đảm bảo rằng các sự kiện đã được gán sau khi tải modal
         const closeButton = document.querySelector('.close');
         if (closeButton) {
@@ -125,7 +125,7 @@ $(document).ready(function(){
         modal.querySelector('.form-message-login').innerHTML = '';
         modal.querySelector('.form-message-login').style.display = 'none';
     }
-    $("#footer").load("html/footer.html")
+    $("#footer").load("../html/footer.html")
 });
 function loginWithFacebook() {
     // Logic for Facebook login

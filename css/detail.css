@@ -223,3 +223,67 @@
 .related-product-btn{
     font-size: 14px;
 }
+/* Khung cho phần bình luận */
+.comment-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+#comment-list-container {
+    border: 1px solid #ddd;  /* Khung bao quanh */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Tạo hiệu ứng hover cho từng bình luận */
+.comment-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.comment-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment-name {
+    display: inline;
+    font-weight: bold;
+}
+
+.comment-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+    display: inline;
+}
+
+.ml-2 {
+    margin-left: 10px;
+}
+
+/* Nội dung bình luận */
+.comment-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.like-btn button {
+    margin-right: 10px;
+}
+
+.text-center button {
+    font-weight: bold;
+}
+
+.comment-item.hidden {
+    display: none;
+}
