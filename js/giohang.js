@@ -27,7 +27,6 @@ function updateCartDisplay() {
     // Cập nhật danh sách sản phẩm trong giỏ hàng
     if (cartItemsContainer) {
         cartItemsContainer.innerHTML = '';
-
         if (carts.length > 0) {
             emptyMessage.style.display = 'none';
             carts.forEach((product, index) => {
@@ -43,8 +42,6 @@ function updateCartDisplay() {
                 `;
                 cartItemsContainer.innerHTML += productHTML;
             });
-        } else {
-            emptyMessage.style.display = 'block';
         }
     }
 

@@ -78,7 +78,7 @@ header {
     color: var(--white) !important;
     height: calc(1.5em + .75rem + 2px) !important;
 }
-.btn:hover, .buy-button:hover, .form-ground-btn:hover,  
+.btn:hover, .form-ground-btn:hover,  
 .form-submit:hover{
     background-color: #c71a22 !important;
     color: var(--white);
