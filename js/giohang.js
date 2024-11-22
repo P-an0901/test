@@ -69,5 +69,5 @@ function saveCart() {
 }
 function redirectToCheckout() {
     saveCart(); // Lưu giỏ hàng vào localStorage
-    window.location.href = "html/checkout.html"; // Chuyển hướng sang trang thanh toán
+    window.location.href = "checkout.html"; // Chuyển hướng sang trang thanh toán
 }

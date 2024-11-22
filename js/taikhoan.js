@@ -22,6 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     } else {
         alert("Vui lòng đăng nhập để xem thông tin tài khoản!");
-        window.location.href = "html/index.html"; // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập
+        window.location.href = "index.html"; // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập
     }
 });
