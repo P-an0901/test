@@ -58,7 +58,7 @@ function increaseQuantity() {
 function addToCart2() {
     // Lấy thông tin về sản phẩm
     var productName = document.querySelector(".product-name h1").innerText;
-    var productPrice = document.querySelector(".product-price").innerText.replace("Giá: ", "").replace(" đ", "").trim();
+    var productPrice = document.querySelector(".product-price").innerText.replace("Giá: ", "");
     var quantity = document.getElementById("quantity").value;
     var productSize = Array.from(document.querySelectorAll('.checkbox-size:checked')).map(cb => cb.value).join(", ");
     var productImage = document.querySelector("#main-product-image").src;
