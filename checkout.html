@@ -12,8 +12,238 @@
   </head>
   <body>
 
-  <div id="header-container"></div>
-  <div id="modal-container"></div>
+    <header>
+      <div class="header-top">
+          <div class="container">
+              <div class="d-flex justify-content-between">
+                  <ul class="list-inline mb-0" id="sesion-left">
+                      <li class="list-inline-item"><a href="#" class="text-white"><i class="fas fa-phone mr-2"></i>0123 456 789 (miễn phí)</a></li>
+                  </ul>
+                  <ul class="list-inline mb-0" id="session_right">
+                      <li class="list-inline-item"><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
+                      <li class="list-inline-item"><a href="#" class="text-white">Cửa hàng</a></li>
+                      <li class="list-inline-item"><a href="#" class="text-white">Chính sách</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="header-middle">
+          <div class="container">
+              <div class="d-flex align-items-center justify-content-between" id="headerMid">
+                  <div class="header-logo">
+                      <a href="">
+                          <img src="images/HELMET.png" alt="" class="header-logo-img">
+                      </a>
+                  </div>
+                  <div action="" class="form-inline">
+                      <form class="search-container d-flex flex-grow-1 position-relative">
+                          <input  type="text"  class="form-control mr-2 pr-5" id="searchInput" placeholder="Tìm kiếm sản phẩm..." 
+                              autocomplete="off">
+                          <button class="btn mr-3" type="button">
+                              <i class="fas fa-search"></i> Tìm
+                          </button>
+                          <ul id="searchResults" class="hidden"></ul>
+                      </form>
+                      
+                      <ul class="list-inline mb-0 d-flex">
+                          <li class="list-inline-item pointer" id="login-menu" onclick="openModal('login')">
+                              <i class="fas fa-user"></i>
+                              <span>Đăng nhập</span>
+                          </li>
+                          <li class="list-inline-item pointer" id="signup-menu" onclick="openModal('signup')">
+                              <i class="fas fa-user-plus"></i>
+                              <span>Đăng ký</span>
+                          </li>
+                          <li class="list-inline-item pointer" id="account-menu" style="display: none; position: relative;">
+                              <i class="fas fa-user-circle"></i>
+                              <span id="account-name">Tài khoản</span>
+                              
+                              <!-- Dropdown menu -->
+                              <ul class="dropdown-menu  pl-2" style="display: none;">
+                                  <li><a href="taikhoan.html" id="logout">Thông tin tài khoản</a></li>
+                                  <li><a href="admin.html" id="admin-page" style="display: none;">Trang Admin</a></li>
+                                  <li><a href="#" id="logout-button">Đăng xuất</a></li>
+                                  <li><a href="#" id="change-password">Đổi mật khẩu</a></li>
+                              </ul>
+                          </li>
+                          <li class="list-inline-item pointer cart-container" onclick="openCart()" title="Giỏ hàng">
+                              <a href="giohang.html">
+                                  <i class="fas fa-shopping-cart"></i>
+                                  <span class="badge badge-pill badge-danger">0</span>
+                              </a>
+                              <div class="cart-dropdown">
+                                  <ul id="cart-items">
+                                      <!-- Nội dung sản phẩm sẽ hiển thị ở đây -->
+                                  </ul>
+                                  <div id="empty-message" class="empty-message">
+                                      <i class="fas fa-shopping-bag"></i>
+                                      Không có sản phẩm nào.
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <nav class="header-bottom">
+      <div class="container">
+          <ul class="menu-list">
+              <li class="menu-list-item"><a href="index.html" class="menu-link active">Trang chủ</a></li>
+              <li class="menu-list-item">
+                  <a href="danhmuc.html" class="menu-link has-submenu">
+                      Danh Mục Sản phẩm 
+                      <i class="fa-solid fa-chevron-down icon-arrow"></i> <!-- Icon mũi tên -->
+                  </a>
+                  <ul class="submenu">
+                      <li><a href="danhmuc.html?category=all"><strong>Tất cả sản phẩm</strong></a></li>
+                      <li><a href="danhmuc.html?category=mu34">Mũ bảo hiểm 3/4 đầu</a></li>
+                      <li><a href="danhmuc.html?category=fullface">Mũ bảo hiểm fullface</a></li>
+                      <li><a href="danhmuc.html?category=half">Mũ bảo hiểm nửa đầu</a></li>
+                      <li><a href="danhmuc.html?category=child">Mũ bảo hiểm trẻ em</a></li>
+                      <li><a href="danhmuc.html?category=bicycle">Mũ bảo hiểm xe đạp</a></li>
+                  </ul>
+              </li>
+              <li class="menu-list-item"><a href="#" class="menu-link">Khuyến mãi</a></li>
+              <li class="menu-list-item">
+                  <a href="#" class="menu-link has-submenu">
+                      Thương Hiệu 
+                      <i class="fa-solid fa-chevron-down icon-arrow"></i> <!-- Icon mũi tên -->
+                  </a>
+                  <ul class="submenu" id="brand-submenu">
+                      <li>
+                          <a href="html/Royal.html">
+                              <img src="images/Logo2020-02.png" alt="Roc" class="submenu-icon">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="html/Royal.html">
+                              <img src="images/Logo2020-03.png" alt="Royal" class="submenu-icon">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="html/JC.html">
+                              <img src="images/Logo2020-05.png" alt="JC" class="submenu-icon"> 
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="images/Logo2020-01-1.png" alt="Asia" class="submenu-icon">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="images/andes-logo.jpg" alt="Andes" class="submenu-icon">
+                          </a>
+                      </li>
+                      <!-- <li>
+                          <a href="#">
+                              <img src="" alt="NonSon" class="submenu-icon"><span>Nón sơn</span>
+                          </a>
+                      </li> -->
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</header>
+<div class="modal fade" id="signup-login" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="forms mdl-cnt">
+                  <div class="form-content sign-up">
+                      <h3 class="form-title">Đăng ký tài khoản</h3>
+                      <p class="form-description">Đăng ký thành viên để mua hàng và nhận những ưu đãi đặc biệt từ chúng tôi</p>
+                      <form action="" class="signup-form">
+                          <div class="form-group">
+                              <label for="fullname" class="form-label">Tên đầy đủ <span class="text-danger">*</span></label>
+                              <input id="fullname" name="fullname" type="text" placeholder="VD: Nguyễn Văn A" class="form-control">
+                              <span class="form-message-name form-message"></span>
+                          </div>
+                          <div class="form-group">
+                              <label for="username" class="form-label">Tên đăng nhập<span class="text-danger">*</span></label>
+                              <input id="username" name="username" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
+                              <span class="form-message-username form-message"></span>
+                          </div>                                     
+                          <div class="form-group">
+                              <label for="email" class="form-label">Email</label>
+                              <input id="email" name="email" type="email" placeholder="Nhập email" class="form-control">
+                              <span class="form-message-email form-message"></span>
+                          </div>                                
+                          <div class="form-group">
+                              <label for="password" class="form-label">Mật khẩu<span class="text-danger">*</span></label>
+                              <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                              <span class="form-message-password form-message"></span>
+                          </div>
+                          <div class="form-group">
+                              <label for="password_confirmation" class="form-label">Nhập lại mật khẩu<span class="text-danger">*</span></label>
+                              <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+                              <span class="form-message-password-confi form-message"></span>
+                          </div>
+                          <div class="form-group form-check">
+                              <input class="form-check-input" type="checkbox" id="checkbox-signup" required>
+                              <label class="form-check-label" for="checkbox-signup">Tôi đồng ý với <a href="#" title="chính sách trang web" target="_blank">chính sách trang web</a></label>
+                              <p class="form-message-checkbox form-message"></p>
+                          </div>
+                          <button type="submit" class="form-submit " id="signup-button">Đăng ký</button>
+                      </form>
+                      <p class="change-login">Bạn đã có tài khoản? <a href="#" class="login-link">Đăng nhập ngay</a></p>
+                  </div>
+                  <div class="form-content login">
+                      <h3 class="form-title">Đăng nhập tài khoản</h3>
+                      <p class="form-description">Đăng nhập thành viên để mua hàng và nhận những ưu đãi đặc biệt từ chúng tôi</p>
+                      <form action="" class="login-form">
+                          <span class="form-message-login"></span>
+                          <div class="form-group">
+                              <label for="username-login" class="form-label">Tên đăng nhập</span></label>
+                              <input id="username-login" name="username" type="text" placeholder="Nhập username" class="form-control">
+                              <span class="form-message-username form-message"></span>
+                          </div>                                                             
+                          <div class="form-group">
+                              <label for="password-login" class="form-label">Mật khẩu</label>
+                              <input id="password-login" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                              <span class="form-message-check-login form-message"></span>
+                          </div>
+                          <p class="forgot-password"><a href="#" class="forgot-password-link">Quên mật khẩu?</a></p>
+                          <button type="submit" class="form-submit " id="login-button">Đăng nhập</button>
+                      </form>
+                      <p class="change-login">Bạn chưa có tài khoản? <a href="#" class="signup-link">Đăng kí ngay</a></p>
+                      <div class="social-login">
+                          <p>Hoặc</p>
+                          <div class="social-buttons">
+                              <button class="social-button" onclick="loginWithFacebook()">
+                                  <i class="fa-brands fa-facebook-f"></i>
+                              </button>
+                              <button class="social-button" onclick="loginWithGoogle()">
+                                  <i class="fa-brands fa-google"></i>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-content forgot-password-form">
+                      <h3 class="form-title">Quên mật khẩu</h3>
+                      <p class="form-description">Nhập email của bạn để lấy lại mật khẩu</p>
+                      <form action="" class="forgot-password-form">
+                          <div class="form-group">
+                              <label for="forgot-email" class="form-label">Email</label>
+                              <input id="forgot-email" name="email" type="email" placeholder="Nhập email" class="form-control">
+                              <span class="form-message forgot-email-message"></span>
+                          </div>
+                          <button type="submit" class="form-submit" id="reset-button">Gửi yêu cầu</button>
+                      </form>
+                      <p class="change-login">Bạn đã nhớ mật khẩu? <a href="#" class="login-link">Đăng nhập ngay</a></p>
+                  </div>                        
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
       <div class="back-to-top active">
           <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
       </div>
@@ -86,11 +316,128 @@
     </div>
   </div>
 
-  <div id="footer"></div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="js/index.js"></script>
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-top-content">
+                <div class="footer-top-img">
+                    <img src="images/HELMET.png" alt="">
+                </div>
+                <div class="footer-top-subbox">
+                    <div class="footer-top-subs">
+                        <h2 class="footer-top-subs-title">Đăng ký nhận tin</h2>
+                        <p class="footer-top-subs-text">Nhận thông tin mới nhất từ chúng tôi</p>
+                    </div>
+                    <form class="form-ground">
+                        <input type="email" class="form-ground-input" placeholder="Nhập email của bạn">
+                        <button class="form-ground-btn">
+                            <span>ĐĂNG KÝ</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget-area">
+        <div class="container">
+            <div class="widget-row">
+                <div class="widget-row-col-1">
+                    <h3 class="widget-title">Về chúng tôi</h3>
+                    <div class="widget-row-col-content">
+                        <p>Helmet cung cấp các loại nón bảo hiểm tốt, an toàn cho bạn.</p>
+                    </div>
+                    <div class="widget-social">
+                        <div class="widget-social-item">
+                            <a href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="widget-social-item">
+                            <a href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-row-col">
+                    <h3 class="widget-title">Liên kết</h3>
+                    <ul class="widget-contact">
+                        <li class="widget-contact-item">
+                            <a href="">                                  
+                                <span>Về chúng tôi</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <span>Sản phẩm</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">                                    
+                                <span>Điều khoản</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">                                   
+                                <span>Liên hệ</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">                                  
+                                <span>Tin tức</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="widget-row-col-1">
+                    <h3 class="widget-title">Liên hệ</h3>
+                    <div class="contact">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-content">
+                                <span>Linh Trung, Thủ Đức, TP Hồ Chí Minh</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-content contact-item-phone">
+                                <span>0123 456 789</span>
+                                <br>
+                                <span>0987 654 321</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div class="contact-content conatct-item-email">
+                                <span>Paan@domain.com</span><br />
+                                <span>22130004@domain.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright-wrap">
+    <div class="container">
+        <div class="copyright-content">
+            <p>&copy; Copyright 2024 Helmet. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/header.js"></script>
   <script src="js/checkout.js"></script>
 
   </body>

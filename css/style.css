@@ -19,15 +19,10 @@ a:hover{
     text-decoration: none !important;
     color: inherit !important;
 }
-#header-container{
-    position: sticky;
-    top:0;
-    z-index: 7; 
-}
 header {
     position: sticky;
     top:0;
-    z-index: 6;    
+    z-index: 7;    
 }
 /* Header*/
 .header-top {
@@ -78,12 +73,12 @@ header {
     color: var(--white) !important;
     height: calc(1.5em + .75rem + 2px) !important;
 }
-.btn:hover, .buy-button:hover, .form-ground-btn:hover,  
+.btn:hover, .form-ground-btn:hover,  
 .form-submit:hover{
     background-color: #c71a22 !important;
     color: var(--white);
 }
-.btn:focus, .buy-button:focus,
+.btn:focus, .close:focus, .close:focus-visible, .buy-button:focus,.size-button:focus,
 .form-ground-btn:focus,  .form-submit:focus,
 .pagination button:focus{
     box-shadow: none !important;  
@@ -160,10 +155,10 @@ input[type="checkbox"]+label {
 }
 .modal-header{
     height: 20px;
-    border: none;
+    border: none !important;
 }
 .modal-header .close{
-    padding: 5px;
+    padding: 5px !important;
 }
 button.close {
     outline: none;
@@ -213,7 +208,7 @@ button.close {
     border: 2px solid #eee;
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    width: 360px;
     display: none; /* Ẩn mặc định */
     z-index: 1;
     cursor: text;
@@ -396,7 +391,9 @@ button.close {
     width: 100%; 
     aspect-ratio: 15 / 6;
 }
-
+.carousel-indicators{
+    z-index: 1 !important;
+}
 /**/
 .slider {
     max-width: 1200px;
@@ -533,17 +530,45 @@ button.close {
 }
 .product-item:hover h3 {
     cursor: pointer;
-    color: #c71a22;
+
+}
+.select-size {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    z-index: 10;
+    z-index: 1;
+    position: relative; 
+    background-color: #fff;
+}
+
+.select-size .size-button {
+    border: 2px solid #ccc; 
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    width: 30px;
+    justify-content: center;
+}
+.select-size  .size-button.selected {
+    border-color: #B5292F !important;
+}
+
+.select-size  .size-button:hover {
+    border-color: #B5292F;
 }
 .product-name {
     display: block; 
-    height: 2.2em; 
+    height: 2.2em;
     overflow: hidden;  
     line-height: 1.1em; 
     font-size: 19px;
     margin: 15px 0 0;
     text-transform: uppercase;
     color: var(--black);
+    background-color: #fff;
 }
 
 .product-price-container {

@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (loggedInUser) {
         // Hiển thị thông tin cá nhân
-        document.getElementById("account-fullname").textContent = loggedInUser.fullName || "Không rõ";
+        document.getElementById("account-fullname").textContent = loggedInUser.fullName;
         document.getElementById("account-email").textContent = loggedInUser.email || "Không rõ";
+        document.getElementById("account-phone").textContent = loggedInUser.email || "Không rõ";
+        document.getElementById("account-address").textContent = loggedInUser.email || "Không rõ";
 
         // Hiển thị lịch sử đơn hàng
         const orderHistory = document.getElementById("order-history");
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     } else {
-        alert("Vui lòng đăng nhập để xem thông tin tài khoản!");
-        window.location.href = "index.html"; // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập
+        // alert("Vui lòng đăng nhập để xem thông tin tài khoản!");
+        // window.location.href = "index.html"; // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập
     }
 });

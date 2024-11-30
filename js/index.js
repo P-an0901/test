@@ -1,6 +1,3 @@
-/* Chèn header*/
-$(document).ready(function(){
-    $("#header-container").load("html/header.html", function(){
         checkStatus();
         const headerNav = document.querySelector(".header-bottom");
         if (headerNav) {
@@ -19,11 +16,10 @@ $(document).ready(function(){
         const danhMucLink = document.querySelector('.menu-link[href="danhmuc.html"]');
         const trangChuLink = document.querySelector('.menu-link[href="index.html"]');
         
-        // Xóa 'active' khỏi tất cả các menu links
         document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active'));
         
         // Kiểm tra URL hiện tại để thêm 'active' cho "Trang chủ" hoặc "Danh Mục Sản phẩm"
-        if (currentUrl.includes("index.html") || currentUrl === "/") {
+        if (currentUrl.includes("index.html") || currentUrl === "") {
             trangChuLink.classList.add('active'); 
         } else if (currentUrl.includes("taikhoan.html") || currentUrl.includes("giohang.html") || currentUrl.includes("gioithieu.html")) {
             document.querySelectorAll('.menu-link').forEach(link => link.classList.remove('active'));
@@ -31,9 +27,8 @@ $(document).ready(function(){
             danhMucLink.classList.add('active'); 
         }
         updateCart();
-    })
+
      // Khi nội dung của modal được tải xong
-     $("#modal-container").load("html/modal.html", function() {
         // Đảm bảo rằng các sự kiện đã được gán sau khi tải modal
         const closeButton = document.querySelector('.close');
         if (closeButton) {
@@ -94,7 +89,6 @@ $(document).ready(function(){
             document.querySelector('.forgot-password-form').style.display = 'none'; 
             document.querySelector('.login').style.display = 'block'; 
         });
-    });
 
     // Hàm mở modal với các loại form: login, signup
     window.openModal = function(type) {
@@ -125,8 +119,7 @@ $(document).ready(function(){
         modal.querySelector('.form-message-login').innerHTML = '';
         modal.querySelector('.form-message-login').style.display = 'none';
     }
-    $("#footer").load("html/footer.html")
-});
+
 function loginWithFacebook() {
     // Logic for Facebook login
   }
@@ -134,7 +127,45 @@ function loginWithFacebook() {
   function loginWithGoogle() {
     // Logic for Google login
   }
+// Lấy tất cả các nút button với class 'size-button'
+const buttons = document.querySelectorAll('.size-button');
 
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        button.classList.add('selected');
+    });
+});
+function checkStatus() {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (loggedInUser) {
+        document.getElementById("account-menu").style.display = "block";
+        document.getElementById("login-menu").style.display = "none";
+        document.getElementById("signup-menu").style.display = "none";
+        document.getElementById("account-name").textContent = loggedInUser.fullName || "Tài khoản";
+        if (loggedInUser.role === 'admin') {
+            document.getElementById('admin-page').style.display = 'block';
+        } else {
+            document.getElementById('admin-page').style.display = 'none';
+        }
+    } else {
+        document.getElementById("account-menu").style.display = "none";
+        document.getElementById("login-menu").style.display = "block";
+        document.getElementById("signup-menu").style.display = "block";
+    }
+}
+function logout() {
+    // Xóa thông tin người dùng khỏi localStorage
+    localStorage.removeItem("loggedInUser");
+
+    // Cập nhật lại trạng thái giao diện
+    checkStatus();
+
+    // Thông báo và chuyển hướng
+    alert("Bạn đã đăng xuất thành công!");
+    window.location.href = "index.html";
+}
 /* Giảm giá*/
 const products = document.querySelectorAll('.product-item');
 
@@ -167,10 +198,16 @@ function addToCart(button) {
     const productPrice = productElement.querySelector('.product-price').innerText;
     const productImage = productElement.querySelector('.product-image').src;
 
+    const selectedSizeButton = productElement.querySelector('.size-button.selected');
+    if (!selectedSizeButton) {
+        alert('Vui lòng chọn kích thước!');
+        return;
+    }
+    const productSize = selectedSizeButton.getAttribute('data-value');
     // Kiểm tra xem sản phẩm đã có trong giỏ hay chưa
-    const productInCart = cart.find(item => item.name === productName);
+    const productInCart = cart.find(item => item.name === productName && item.size === productSize);
     if (productInCart) {
-        alert('Sản phẩm này đã có trong giỏ hàng!');
+        alert('Sản phẩm này với kích thước này đã có trong giỏ hàng!');
         return;
     }
 
@@ -179,6 +216,7 @@ function addToCart(button) {
         name: productName,
         price: productPrice,
         image: productImage,
+        size: productSize,
     };
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -205,6 +243,8 @@ function updateCart() {
                     <li class="cart-item">
                         <img src="${product.image}" alt="${product.name}" class="cart-item-img">
                         <span class="cart-item-name">${product.name}</span>
+                        <span class="cart-item-size mr-2">${product.size}</span>
+                        <span class="cart-item-quantity mr-2">${product.quantity ? product.quantity : '1'}</span>
                         <span class="cart-item-price">${product.price}</span>
                         <button class="remove-item-btn" onclick="removeFromCart(${index})">
                             <i class="fas fa-trash"></i> Xóa
